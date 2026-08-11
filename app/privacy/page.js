@@ -1,231 +1,252 @@
 import Link from "next/link";
+import Navbar from "../components/Navbar";
+import Footer from "../components/Footer";
+import { ShieldCheck, ArrowLeft, Mail } from "lucide-react";
 
 export const metadata = {
-  title: "Règles de confidentialité — Shikaku",
-  description: "Politique de confidentialité de l'application Shikaku",
+  title: "Règles de confidentialité — Shikaku Mobile",
+  description: "Politique de confidentialité officielle de l'application mobile Shikaku",
 };
 
 const sections = [
   {
-    suit: "♠",
+    icon: "01",
     title: "Données que nous collectons",
     body: [
-      "Shikaku est conçue pour fonctionner avec le moins de données personnelles possible. Selon les fonctionnalités que vous utilisez, l'application peut accéder aux éléments suivants :",
+      "Shikaku est conçue pour fonctionner avec le strict minimum de données personnelles. Selon les fonctionnalités utilisées dans le jeu, l'application peut accéder aux éléments suivants :",
     ],
     list: [
-      "Photos ou caméra — uniquement si vous choisissez d'importer ou de prendre une image (par exemple pour un avatar ou un élément de jeu). Aucune photo n'est envoyée à nos serveurs sans votre action explicite.",
-      "Informations techniques sur l'appareil — modèle, version du système, identifiants techniques anonymes, utilisés uniquement à des fins de stabilité et de compatibilité.",
+      "Photos ou Caméra — uniquement si vous choisissez d'importer une photo de profil personnalisée. Aucune photo n'est transférée sans action explicite de votre part.",
+      "Informations techniques de l'appareil — modèle du smartphone, version d'OS et identifiants techniques anonymes pour garantir la stabilité du jeu.",
     ],
   },
   {
-    suit: "♥",
+    icon: "02",
     title: "Comment nous utilisons ces données",
     body: [
-      "Les données collectées servent uniquement à faire fonctionner et améliorer l'application : afficher le contenu que vous demandez, lire des sons ou vidéos intégrés au jeu, diagnostiquer les erreurs techniques, et assurer la compatibilité avec votre appareil.",
-      "Nous ne vendons ni ne louons vos données personnelles à des tiers.",
+      "Les données collectées servent exclusivement au fonctionnement et à l'amélioration de l'expérience de jeu : afficher votre profil, gérer les matchs multijoueurs, traiter les statistiques et diagnostiquer les erreurs techniques.",
+      "Nous ne vendons ni ne louons jamais vos données personnelles à des tiers.",
     ],
   },
   {
-    suit: "♦",
-    title: "Services tiers utilisés",
+    icon: "03",
+    title: "Services tiers & Firebase",
     body: [
-      "L'application s'appuie sur des services tiers qui peuvent collecter des données selon leurs propres règles de confidentialité :",
+      "L'application s'appuie sur des services sécurisés qui peuvent traiter certaines données selon leurs règles de confidentialité :",
     ],
     list: [
-      "Google Play Services — infrastructure de distribution et de sécurité de l'application.",
+      "Google Play Services & Firebase — authentification sécurisée, base de données de jeu en direct et infrastructure.",
     ],
     body2: [
-      "Nous vous invitons à consulter la politique de confidentialité de Google à l'adresse policies.google.com/privacy pour plus de détails sur le traitement effectué par ces services.",
+      "Vous pouvez consulter la politique de confidentialité de Google sur policies.google.com/privacy.",
     ],
   },
   {
-    suit: "♣",
-    title: "Conservation et sécurité des données",
+    icon: "04",
+    title: "Conservation et sécurité",
     body: [
-      "Les données techniques et de diagnostic sont conservées uniquement le temps nécessaire à l'amélioration de l'application, puis supprimées ou anonymisées. Nous prenons des mesures raisonnables pour protéger les informations traitées contre l'accès non autorisé.",
+      "Les données de jeu et de profil sont conservées uniquement le temps d'utilisation de votre compte. Nous appliquons des protocoles de chiffrement pour protéger vos informations contre tout accès non autorisé.",
     ],
   },
   {
-    suit: "♠",
+    icon: "05",
     title: "Confidentialité des enfants",
     body: [
-      "Shikaku ne s'adresse pas sciemment à des enfants de moins de 9 ans et ne collecte pas sciemment de données personnelles auprès de ce public. Si vous pensez qu'un enfant nous a fourni des données personnelles, contactez-nous afin que nous puissions les supprimer.",
+      "Shikaku ne collecte pas sciemment d'informations personnelles auprès des enfants de moins de 9 ans. Si vous pensez qu'un enfant nous a fourni des informations, contactez-nous immédiatement pour suppression.",
     ],
   },
   {
-    suit: "♥",
-    title: "Vos droits",
+    icon: "06",
+    title: "Vos Droits & Suppression",
     body: [
-      "Vous pouvers nous contacter à tout moment pour demander l'accès, la correction ou la suppression des données vous concernant que nous pourrions détenir.",
-    ],
-  },
-  {
-    suit: "♦",
-    title: "Modifications de cette politique",
-    body: [
-      "Cette politique de confidentialité peut être mise à jour occasionnellement, par exemple lors de l'ajout d'une nouvelle fonctionnalité à l'application. La date de dernière mise à jour est indiquée en bas de cette page.",
+      "Conformément au RGPD, vous disposez d'un droit d'accès, de rectification et de suppression de vos données personnelles à tout moment.",
     ],
   },
 ];
 
 export default function PrivacyPolicy() {
   return (
-    <main
-      style={{
-        maxWidth: "680px",
-        margin: "0 auto",
-        padding: "4rem 1.5rem 6rem",
-      }}
-    >
-      <Link
-        href="/"
-        className="font-mono"
-        style={{
-          fontSize: "0.85rem",
-          color: "var(--muted)",
-          textDecoration: "none",
-        }}
-      >
-        ← Shikaku
-      </Link>
-
-      <h1
-        className="font-display"
-        style={{
-          fontSize: "clamp(2rem, 4vw, 2.75rem)",
-          fontWeight: 600,
-          color: "var(--felt-deep)",
-          marginTop: "1.25rem",
-          marginBottom: "0.5rem",
-        }}
-      >
-        Règles de confidentialité
-      </h1>
-
-      <p style={{ color: "var(--muted)", marginBottom: "3rem" }}>
-        Cette politique explique quelles données l&rsquo;application mobile{" "}
-        <strong>Shikaku</strong> peut collecter, pourquoi, et comment elles
-        sont protégées.
-      </p>
+    <main style={{ minHeight: "100vh", background: "var(--bg-deep)", color: "var(--text-main)" }}>
+      <Navbar />
 
       <div
         style={{
-          display: "flex",
-          flexDirection: "column",
-          gap: "2.75rem",
+          maxWidth: "800px",
+          margin: "0 auto",
+          padding: "8rem 1.5rem 6rem 1.5rem",
         }}
       >
-        {sections.map((s, i) => (
-          <section key={i}>
+        <Link
+          href="/"
+          className="btn-cyber-outline"
+          style={{
+            padding: "0.5rem 1.2rem",
+            fontSize: "0.85rem",
+            marginBottom: "2rem",
+          }}
+        >
+          <ArrowLeft size={16} />
+          Retour à l&apos;accueil
+        </Link>
+
+        <div
+          style={{
+            display: "inline-flex",
+            alignItems: "center",
+            gap: "0.5rem",
+            padding: "0.4rem 1rem",
+            borderRadius: "30px",
+            background: "rgba(0, 240, 255, 0.1)",
+            border: "1px solid rgba(0, 240, 255, 0.3)",
+            color: "var(--neon-cyan)",
+            fontSize: "0.8rem",
+            fontWeight: 700,
+            fontFamily: "var(--font-orbitron)",
+            marginBottom: "1rem",
+          }}
+        >
+          <ShieldCheck size={14} />
+          DOCUMENT OFFICIEL
+        </div>
+
+        <h1
+          className="font-orbitron"
+          style={{
+            fontSize: "clamp(2rem, 4vw, 3rem)",
+            fontWeight: 800,
+            color: "#fff",
+            marginBottom: "1rem",
+          }}
+        >
+          RÈGLES DE <span className="text-gradient-cyan-pink">CONFIDENTIALITÉ</span>
+        </h1>
+
+        <p style={{ color: "var(--text-muted)", fontSize: "1.1rem", marginBottom: "3.5rem", lineHeight: 1.7 }}>
+          Cette politique explique en toute transparence la manière dont l&apos;application mobile{" "}
+          <strong style={{ color: "#fff" }}>Shikaku</strong> protège et traite vos données personnelles.
+        </p>
+
+        {/* Privacy Sections */}
+        <div style={{ display: "flex", flexDirection: "column", gap: "2rem" }}>
+          {sections.map((s) => (
             <div
+              key={s.icon}
+              className="cyber-glass-card"
               style={{
-                display: "flex",
-                alignItems: "baseline",
-                gap: "0.75rem",
-                borderBottom: "1px solid var(--hairline)",
-                paddingBottom: "0.6rem",
-                marginBottom: "0.9rem",
+                padding: "2rem",
+                borderRadius: "20px",
               }}
             >
-              <span
-                aria-hidden="true"
-                className="font-mono"
-                style={{ color: "var(--gold)", fontSize: "1.1rem" }}
-              >
-                {s.suit}
-              </span>
-              <h2
-                className="font-display"
+              <div
                 style={{
-                  fontSize: "1.25rem",
-                  fontWeight: 600,
-                  margin: 0,
-                  color: "var(--ink)",
+                  display: "flex",
+                  alignItems: "center",
+                  gap: "0.8rem",
+                  marginBottom: "1rem",
+                  borderBottom: "1px solid rgba(255,255,255,0.08)",
+                  paddingBottom: "0.8rem",
                 }}
               >
-                {s.title}
-              </h2>
-            </div>
+                <span
+                  className="font-orbitron"
+                  style={{
+                    color: "var(--neon-cyan)",
+                    fontSize: "0.9rem",
+                    fontWeight: 800,
+                    padding: "0.2rem 0.6rem",
+                    borderRadius: "6px",
+                    background: "rgba(0, 240, 255, 0.15)",
+                  }}
+                >
+                  {s.icon}
+                </span>
+                <h2
+                  className="font-orbitron"
+                  style={{
+                    fontSize: "1.2rem",
+                    fontWeight: 700,
+                    color: "#fff",
+                  }}
+                >
+                  {s.title}
+                </h2>
+              </div>
 
-            {s.body.map((p, j) => (
-              <p key={j} style={{ margin: "0 0 0.75rem" }}>
-                {p}
-              </p>
-            ))}
-
-            {s.list && (
-              <ul style={{ paddingLeft: "1.25rem", margin: "0 0 0.75rem" }}>
-                {s.list.map((item, k) => (
-                  <li key={k} style={{ marginBottom: "0.4rem" }}>
-                    {item}
-                  </li>
-                ))}
-              </ul>
-            )}
-
-            {s.body2 &&
-              s.body2.map((p, j) => (
-                <p key={`b2-${j}`} style={{ margin: 0, color: "var(--muted)" }}>
+              {s.body.map((p, j) => (
+                <p key={j} style={{ color: "var(--text-muted)", fontSize: "0.98rem", marginBottom: "0.8rem", lineHeight: 1.6 }}>
                   {p}
                 </p>
               ))}
-          </section>
-        ))}
 
-        <section>
+              {s.list && (
+                <ul style={{ paddingLeft: "1.3rem", color: "var(--text-muted)", fontSize: "0.95rem", marginBottom: "0.8rem" }}>
+                  {s.list.map((item, k) => (
+                    <li key={k} style={{ marginBottom: "0.5rem" }}>
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+              )}
+
+              {s.body2 &&
+                s.body2.map((p, j) => (
+                  <p key={`b2-${j}`} style={{ color: "var(--text-muted)", fontSize: "0.9rem", fontStyle: "italic" }}>
+                    {p}
+                  </p>
+                ))}
+            </div>
+          ))}
+
+          {/* Contact Section */}
           <div
+            className="cyber-glass-card"
             style={{
-              borderBottom: "1px solid var(--hairline)",
-              paddingBottom: "0.6rem",
-              marginBottom: "0.9rem",
-              display: "flex",
-              alignItems: "baseline",
-              gap: "0.75rem",
+              padding: "2rem",
+              borderRadius: "20px",
+              border: "1px solid var(--neon-pink)",
             }}
           >
-            <span
-              aria-hidden="true"
-              className="font-mono"
-              style={{ color: "var(--gold)", fontSize: "1.1rem" }}
-            >
-              ♣
-            </span>
             <h2
-              className="font-display"
+              className="font-orbitron"
               style={{
-                fontSize: "1.25rem",
-                fontWeight: 600,
-                margin: 0,
-                color: "var(--ink)",
+                fontSize: "1.2rem",
+                fontWeight: 700,
+                color: "#fff",
+                marginBottom: "0.8rem",
+                display: "flex",
+                alignItems: "center",
+                gap: "0.6rem",
               }}
             >
+              <Mail size={18} color="var(--neon-pink)" />
               Nous contacter
             </h2>
+            <p style={{ color: "var(--text-muted)", fontSize: "0.95rem" }}>
+              Pour toute demande concernant la suppression de votre compte ou vos données, contactez notre équipe :{" "}
+              <a
+                href="mailto:naguejustin78@gmail.com"
+                style={{ color: "var(--neon-pink)", fontWeight: 700, textDecoration: "none" }}
+              >
+                naguejustin78@gmail.com
+              </a>
+            </p>
           </div>
-          <p style={{ margin: 0 }}>
-            Pour toute question sur cette politique ou vos données, écrivez-nous
-            à{" "}
-            <a
-              href="mailto:naguejustin78@gmail.com"
-              style={{ color: "var(--felt)", fontWeight: 500 }}
-            >
-              naguejustin78@gmail.com
-            </a>
-            .
-          </p>
-        </section>
+        </div>
+
+        <div
+          className="font-orbitron"
+          style={{
+            marginTop: "3rem",
+            textAlign: "center",
+            fontSize: "0.8rem",
+            color: "var(--text-muted)",
+          }}
+        >
+          Dernière mise à jour : 19 juillet 2026
+        </div>
       </div>
 
-      <p
-        className="font-mono"
-        style={{
-          marginTop: "4rem",
-          fontSize: "0.8rem",
-          color: "var(--muted)",
-        }}
-      >
-        Dernière mise à jour : 19 juillet 2026
-      </p>
+      <Footer />
     </main>
   );
 }
