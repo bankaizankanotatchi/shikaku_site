@@ -89,7 +89,7 @@ export default function AnimatedGameSimulation() {
     } else {
       // Finished all moves: hold for 3.5s then restart loop
       setIsFinished(true);
-      setStatusMessage("🏆 VICTOIRE BLEU");
+      setStatusMessage("VICTOIRE BLEU");
       const resetTimer = setTimeout(() => {
         setDots({});
         setSquares([]);
@@ -97,7 +97,7 @@ export default function AnimatedGameSimulation() {
         setRedScore(0);
         setCurrentStep(0);
         setActivePlayer("blue");
-        setStatusMessage("DÉBUT DU MATCH");
+        setStatusMessage("DÉBUT");
         setIsFinished(false);
       }, 3500);
 
@@ -159,7 +159,7 @@ export default function AnimatedGameSimulation() {
 
         {/* Tactical Status Badge */}
         <div
-          className="font-orbitron"
+          className="font-orbitron text-center"
           style={{
             fontSize: "0.72rem",
             fontWeight: 800,

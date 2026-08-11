@@ -2,7 +2,7 @@
 import React, { useState } from "react";
 import RobotMascotWeb from "./RobotMascotWeb";
 import { motion } from "framer-motion";
-import { MessageSquare, Target, Lightbulb, Flame, Palette } from "lucide-react";
+import { MessageSquare, Target, Lightbulb, Flame, Palette, ShieldCheck, Sparkles, Award } from "lucide-react";
 
 const mascotTips = [
   {
@@ -23,11 +23,11 @@ const mascotTips = [
 ];
 
 const mascotSkins = [
-  { id: "classic", name: "Classique", color: "#7F56D9" },
-  { id: "emerald", name: "Émeraude", color: "#00E676" },
-  { id: "ruby", name: "Rubis", color: "#FF1744" },
-  { id: "cyan", name: "Cyan Cyber", color: "#00E5FF" },
-  { id: "gold", name: "Or (Divin)", color: "#FFD700" },
+  { id: "classic", name: "Classique", color: "#7F56D9", pts: 0, desc: "Débloqué par défaut" },
+  { id: "emerald", name: "Émeraude", color: "#00E676", pts: 25, desc: "25 Points accumulés" },
+  { id: "ruby", name: "Rubis", color: "#FF1744", pts: 50, desc: "50 Points accumulés" },
+  { id: "cyan", name: "Cyan Cyber", color: "#00E5FF", pts: 100, desc: "100 Points accumulés" },
+  { id: "gold", name: "Or (Divin)", color: "#FFD700", pts: 200, desc: "200 Points accumulés" },
 ];
 
 export default function MascotSection() {
@@ -39,7 +39,7 @@ export default function MascotSection() {
       id="mascot"
       style={{
         position: "relative",
-        padding: "6rem 1.5rem",
+        padding: "5rem 1.5rem",
         background: "radial-gradient(ellipse at bottom, rgba(15, 8, 38, 0.9) 0%, rgba(5, 2, 12, 1) 100%)",
         overflow: "hidden",
       }}
@@ -55,11 +55,40 @@ export default function MascotSection() {
           zIndex: 10,
         }}
       >
+        {/* Mobile & Section Header Badge */}
+        <div style={{ textAlign: "center", marginBottom: "2.5rem" }}>
+          <motion.div
+            initial={{ opacity: 0, y: 15 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+            style={{
+              display: "inline-flex",
+              alignItems: "center",
+              gap: "0.5rem",
+              padding: "0.4rem 1.1rem",
+              borderRadius: "30px",
+              background: "rgba(0, 240, 255, 0.12)",
+              border: "1px solid rgba(0, 240, 255, 0.35)",
+              color: "var(--neon-cyan)",
+              fontSize: "0.85rem",
+              fontWeight: 800,
+              fontFamily: "var(--font-orbitron)",
+              letterSpacing: "0.08em",
+              marginBottom: "0.8rem",
+              boxShadow: "0 0 15px rgba(0, 240, 255, 0.2)",
+            }}
+          >
+            <Sparkles size={15} />
+            NOTRE MASCOTTE
+          </motion.div>
+        </div>
+
         <div
           style={{
             display: "grid",
             gridTemplateColumns: "1fr",
-            gap: "4rem",
+            gap: "3.5rem",
             alignItems: "center",
           }}
           className="mascot-grid"
@@ -81,12 +110,12 @@ export default function MascotSection() {
             <div
               style={{
                 position: "relative",
-                width: "290px",
-                height: "290px",
+                width: "270px",
+                height: "270px",
                 borderRadius: "45px",
                 background: "rgba(18, 10, 36, 0.85)",
                 border: `3px solid ${selectedSkin.color}`,
-                boxShadow: `0 0 50px ${selectedSkin.color}66, inset 0 0 20px ${selectedSkin.color}33`,
+                boxShadow: `0 0 45px ${selectedSkin.color}66, inset 0 0 20px ${selectedSkin.color}33`,
                 display: "flex",
                 alignItems: "center",
                 justifyContent: "center",
@@ -94,17 +123,17 @@ export default function MascotSection() {
                 transition: "all 0.5s ease",
               }}
             >
-              <RobotMascotWeb size={240} state="idle" skinColor={selectedSkin.color} />
+              <RobotMascotWeb size={220} state="idle" skinColor={selectedSkin.color} />
             </div>
 
             {/* Dynamic Skin Picker */}
             <div
               style={{
-                marginTop: "1.5rem",
+                marginTop: "1.2rem",
                 display: "flex",
                 alignItems: "center",
                 gap: "0.8rem",
-                padding: "0.6rem 1.2rem",
+                padding: "0.55rem 1.1rem",
                 borderRadius: "30px",
                 background: "rgba(10, 5, 24, 0.8)",
                 border: "1px solid rgba(255,255,255,0.12)",
@@ -122,7 +151,7 @@ export default function MascotSection() {
                   <button
                     key={skin.id}
                     onClick={() => setSelectedSkin(skin)}
-                    title={skin.name}
+                    title={`${skin.name} (${skin.pts} Pts)`}
                     style={{
                       width: "22px",
                       height: "22px",
@@ -139,17 +168,67 @@ export default function MascotSection() {
               </div>
             </div>
 
-            {/* Skin Name Display */}
+            {/* Skin Name & Unlock Info */}
             <div
-              className="font-orbitron"
               style={{
                 marginTop: "0.8rem",
-                fontSize: "0.8rem",
-                fontWeight: 700,
-                color: selectedSkin.color,
+                textAlign: "center",
               }}
             >
-              SKIN DU ROBOT : {selectedSkin.name.toUpperCase()}
+              <div
+                className="font-orbitron"
+                style={{
+                  fontSize: "0.82rem",
+                  fontWeight: 800,
+                  color: selectedSkin.color,
+                  letterSpacing: "0.05em",
+                }}
+              >
+                SKIN SELECTIONNÉ : {selectedSkin.name.toUpperCase()}
+              </div>
+              <div
+                style={{
+                  fontSize: "0.78rem",
+                  color: "var(--text-muted)",
+                  marginTop: "0.2rem",
+                }}
+              >
+                {selectedSkin.pts === 0
+                  ? "✓ Gratuit (Débloqué par défaut)"
+                  : `🔒 Requis : ${selectedSkin.pts} Points accumulés en profil`}
+              </div>
+            </div>
+
+            {/* Skin Unlocking Rule Explanation Box */}
+            <div
+              style={{
+                marginTop: "1.5rem",
+                padding: "1rem 1.2rem",
+                borderRadius: "16px",
+                background: "rgba(10, 5, 24, 0.75)",
+                border: "1px solid rgba(255, 215, 0, 0.3)",
+                maxWidth: "340px",
+                textAlign: "center",
+              }}
+            >
+              <div
+                className="font-orbitron"
+                style={{
+                  fontSize: "0.78rem",
+                  fontWeight: 800,
+                  color: "var(--cyber-gold)",
+                  marginBottom: "0.4rem",
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  gap: "0.4rem",
+                }}
+              >
+                <Award size={14} /> DÉBLOCAGE DANS VOTRE PROFIL
+              </div>
+              <div style={{ fontSize: "0.78rem", color: "var(--text-muted)", lineHeight: 1.45 }}>
+                Les apparences se débloquent automatiquement dans le profil en accumulant des points de victoires (25 Pts Émeraude, 50 Pts Rubis, 100 Pts Cyan, 200 Pts Or Divin) <strong>sans jamais consommer vos jetons !</strong>
+              </div>
             </div>
           </motion.div>
 
@@ -160,33 +239,15 @@ export default function MascotSection() {
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
           >
-            <div
-              style={{
-                display: "inline-flex",
-                alignItems: "center",
-                gap: "0.5rem",
-                padding: "0.4rem 1rem",
-                borderRadius: "30px",
-                background: "rgba(0, 240, 255, 0.1)",
-                border: "1px solid rgba(0, 240, 255, 0.3)",
-                color: "var(--neon-cyan)",
-                fontSize: "0.8rem",
-                fontWeight: 700,
-                fontFamily: "var(--font-orbitron)",
-                marginBottom: "1rem",
-              }}
-            >
-              <MessageSquare size={14} />
-              CONSEILS TACTIQUES DU ROBOT
-            </div>
+
 
             <h2
               className="font-orbitron"
               style={{
-                fontSize: "clamp(2rem, 4vw, 3.2rem)",
+                fontSize: "clamp(1.7rem, 4.5vw, 3rem)",
                 fontWeight: 800,
                 color: "#fff",
-                marginBottom: "1.5rem",
+                marginBottom: "1.2rem",
               }}
             >
               L&apos;ESPRIT DE LA <br />
@@ -197,17 +258,17 @@ export default function MascotSection() {
             <div
               className="cyber-glass-card"
               style={{
-                padding: "2rem",
-                marginBottom: "2rem",
+                padding: "1.5rem",
+                marginBottom: "1.5rem",
                 position: "relative",
                 borderLeft: `4px solid ${selectedSkin.color}`,
               }}
             >
               <div
                 style={{
-                  fontSize: "1.15rem",
+                  fontSize: "1.05rem",
                   color: "#fff",
-                  lineHeight: 1.7,
+                  lineHeight: 1.65,
                   fontStyle: "italic",
                 }}
               >
@@ -216,13 +277,13 @@ export default function MascotSection() {
 
               <div
                 style={{
-                  marginTop: "1rem",
+                  marginTop: "0.8rem",
                   display: "flex",
                   alignItems: "center",
                   justifyContent: "space-between",
                   color: selectedSkin.color,
                   fontWeight: 700,
-                  fontSize: "0.85rem",
+                  fontSize: "0.82rem",
                   fontFamily: "var(--font-orbitron)",
                 }}
               >
@@ -242,7 +303,7 @@ export default function MascotSection() {
                     key={tip.title}
                     onClick={() => setActiveTip(idx)}
                     style={{
-                      padding: "1rem",
+                      padding: "0.9rem",
                       borderRadius: "16px",
                       background: isActive ? "rgba(255, 0, 127, 0.2)" : "rgba(18, 10, 36, 0.5)",
                       border: isActive ? "1px solid var(--neon-pink)" : "1px solid rgba(255, 255, 255, 0.1)",
@@ -252,13 +313,13 @@ export default function MascotSection() {
                       transition: "all 0.3s ease",
                     }}
                   >
-                    <Icon size={20} color={isActive ? "var(--neon-pink)" : "var(--neon-cyan)"} />
+                    <Icon size={18} color={isActive ? "var(--neon-pink)" : "var(--neon-cyan)"} />
                     <div
                       className="font-orbitron"
                       style={{
-                        fontSize: "0.8rem",
+                        fontSize: "0.78rem",
                         fontWeight: 700,
-                        marginTop: "0.5rem",
+                        marginTop: "0.4rem",
                         color: isActive ? "#fff" : "var(--text-muted)",
                       }}
                     >
