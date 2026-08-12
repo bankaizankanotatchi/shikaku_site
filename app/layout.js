@@ -23,6 +23,8 @@ export default function RootLayout({ children }) {
           rel="stylesheet"
         />
         <link rel="icon" href="/favicon.ico" />
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4500149809702229"
+          crossorigin="anonymous"></script>
       </head>
       <body>
         <PageLoader />
