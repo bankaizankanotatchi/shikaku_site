@@ -136,7 +136,7 @@ export default function JetonsPage() {
                 <CheckCircle2 size={16} color="var(--cyber-gold)" /> <strong>CONVERTIBLES : 1 JETON ÉLIGIBLE = 5 FCFA XAF</strong>
               </li>
               <li style={{ display: "flex", alignItems: "center", gap: "0.6rem" }}>
-                <CheckCircle2 size={16} color="var(--cyber-gold)" /> Retraits instantanés dès 50 Jetons (250 FCFA)
+                <CheckCircle2 size={16} color="var(--cyber-gold)" /> Retraits instantanés dès 1 000 Jetons (5 000 FCFA)
               </li>
             </ul>
           </div>
@@ -301,35 +301,23 @@ export default function JetonsPage() {
               Les prix affichés dans la boutique ci-dessus représentent le <strong>prix de base net des jetons</strong>. Lors du passage en caisse (Checkout Tara Money), des frais d&apos;opérateur sont calculés en toute transparence selon le mode de paiement choisi :
             </p>
 
-            <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(220px, 1fr))", gap: "1rem", marginBottom: "1.5rem" }}>
-              <div style={{ padding: "1rem", borderRadius: "12px", background: "rgba(0, 255, 136, 0.08)", border: "1px solid rgba(0, 255, 136, 0.3)" }}>
-                <div style={{ color: "#00FF88", fontWeight: 800, fontSize: "0.85rem" }}>🇨🇲 MOBILE MONEY CAMEROUN</div>
-                <div style={{ color: "#fff", fontWeight: 900, fontSize: "1.3rem", marginTop: "0.2rem" }}>+ 3 %</div>
-                <div style={{ color: "var(--text-muted)", fontSize: "0.78rem", marginTop: "0.2rem" }}>MTN & Orange Money Cameroun</div>
+            <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))", gap: "1.2rem", marginBottom: "1.5rem" }}>
+              <div style={{ padding: "1.2rem", borderRadius: "14px", background: "rgba(0, 240, 255, 0.08)", border: "1px solid rgba(0, 240, 255, 0.3)" }}>
+                <div style={{ color: "var(--neon-cyan)", fontWeight: 800, fontSize: "0.9rem" }}>📱 🌍 💳 TOUS LES MOYENS DE PAIEMENT</div>
+                <div style={{ color: "#fff", fontWeight: 900, fontSize: "1.4rem", marginTop: "0.2rem" }}>+ 11 % DE FRAIS</div>
+                <div style={{ color: "var(--text-muted)", fontSize: "0.82rem", marginTop: "0.2rem" }}>Mobile Money (CMR, Afrique), Wave & Cartes Bancaires (Visa/Mastercard)</div>
               </div>
 
-              <div style={{ padding: "1rem", borderRadius: "12px", background: "rgba(0, 212, 255, 0.08)", border: "1px solid rgba(0, 212, 255, 0.3)" }}>
-                <div style={{ color: "#00d4ff", fontWeight: 800, fontSize: "0.85rem" }}>🌍 MOBILE MONEY AFRIQUE</div>
-                <div style={{ color: "#fff", fontWeight: 900, fontSize: "1.3rem", marginTop: "0.2rem" }}>+ 7 %</div>
-                <div style={{ color: "var(--text-muted)", fontSize: "0.78rem", marginTop: "0.2rem" }}>Moov, Wave, Airtel, Moov CI, etc.</div>
-              </div>
-
-              <div style={{ padding: "1rem", borderRadius: "12px", background: "rgba(255, 0, 128, 0.08)", border: "1px solid rgba(255, 0, 128, 0.3)" }}>
-                <div style={{ color: "#ff0080", fontWeight: 800, fontSize: "0.85rem" }}>💳 CARTES BANCAIRES</div>
-                <div style={{ color: "#fff", fontWeight: 900, fontSize: "1.3rem", marginTop: "0.2rem" }}>+ 11 %</div>
-                <div style={{ color: "var(--text-muted)", fontSize: "0.78rem", marginTop: "0.2rem" }}>Visa & Mastercard International</div>
-              </div>
-
-              <div style={{ padding: "1rem", borderRadius: "12px", background: "rgba(255, 215, 0, 0.08)", border: "1px solid rgba(255, 215, 0, 0.4)" }}>
-                <div style={{ color: "var(--cyber-gold)", fontWeight: 800, fontSize: "0.85rem" }}>👑 COMPTE CERTIFIÉ</div>
-                <div style={{ color: "#fff", fontWeight: 900, fontSize: "1.3rem", marginTop: "0.2rem" }}>0 % (EXONÉRÉ)</div>
-                <div style={{ color: "var(--text-muted)", fontSize: "0.78rem", marginTop: "0.2rem" }}>Tarif fixe net de 19 999 FCFA</div>
+              <div style={{ padding: "1.2rem", borderRadius: "14px", background: "rgba(255, 215, 0, 0.08)", border: "1px solid rgba(255, 215, 0, 0.4)" }}>
+                <div style={{ color: "var(--cyber-gold)", fontWeight: 800, fontSize: "0.9rem" }}>👑 COMPTE CERTIFIÉ</div>
+                <div style={{ color: "#fff", fontWeight: 900, fontSize: "1.4rem", marginTop: "0.2rem" }}>0 % (EXONÉRÉ)</div>
+                <div style={{ color: "var(--text-muted)", fontSize: "0.82rem", marginTop: "0.2rem" }}>Tarif fixe net de 19 999 FCFA</div>
               </div>
             </div>
 
             <div style={{ display: "flex", alignItems: "center", gap: "0.6rem", fontSize: "0.85rem", color: "var(--text-muted)" }}>
               <AlertCircle size={16} color="var(--neon-cyan)" />
-              <em>Exemple : Pour un pack à 1 000 FCFA par Mobile Money Cameroun (+3%), le montant final facturé sur Tara Money est de 1 030 FCFA.</em>
+              <em>Exemple : Pour un pack à 1 000 FCFA, les frais de 11% s&apos;appliquent au checkout Tara Money pour un total net facturé de 1 110 FCFA.</em>
             </div>
           </div>
         </div>
