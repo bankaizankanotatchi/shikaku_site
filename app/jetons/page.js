@@ -264,32 +264,32 @@ export default function JetonsPage() {
               <div style={{ padding: "1rem", borderRadius: "12px", background: "rgba(255,255,255,0.04)", textAlign: "center", border: "1px solid rgba(255, 215, 0, 0.2)" }}>
                 <div className="font-orbitron" style={{ color: "var(--cyber-gold)", fontWeight: 800 }}>PACK STARTER</div>
                 <div style={{ color: "#fff", fontWeight: 700, fontSize: "1.1rem" }}>100 Jetons</div>
-                <div style={{ color: "var(--text-muted)", fontSize: "0.85rem" }}>515 FCFA</div>
+                <div style={{ color: "var(--text-muted)", fontSize: "0.85rem" }}>500 FCFA</div>
               </div>
               <div style={{ padding: "1rem", borderRadius: "12px", background: "rgba(255,255,255,0.04)", textAlign: "center", border: "1px solid rgba(255, 215, 0, 0.2)" }}>
                 <div className="font-orbitron" style={{ color: "var(--cyber-gold)", fontWeight: 800 }}>PACK JOUEUR</div>
                 <div style={{ color: "#fff", fontWeight: 700, fontSize: "1.1rem" }}>200 Jetons</div>
-                <div style={{ color: "var(--text-muted)", fontSize: "0.85rem" }}>1 030 FCFA</div>
+                <div style={{ color: "var(--text-muted)", fontSize: "0.85rem" }}>1 000 FCFA</div>
               </div>
               <div style={{ padding: "1rem", borderRadius: "12px", background: "rgba(255,255,255,0.04)", textAlign: "center", border: "1px solid rgba(255, 215, 0, 0.2)" }}>
                 <div className="font-orbitron" style={{ color: "var(--cyber-gold)", fontWeight: 800 }}>PACK PRO</div>
                 <div style={{ color: "#fff", fontWeight: 700, fontSize: "1.1rem" }}>300 Jetons</div>
-                <div style={{ color: "var(--text-muted)", fontSize: "0.85rem" }}>1 545 FCFA</div>
+                <div style={{ color: "var(--text-muted)", fontSize: "0.85rem" }}>1 500 FCFA</div>
               </div>
               <div style={{ padding: "1rem", borderRadius: "12px", background: "rgba(255,255,255,0.04)", textAlign: "center", border: "1px solid rgba(255, 215, 0, 0.2)" }}>
                 <div className="font-orbitron" style={{ color: "var(--cyber-gold)", fontWeight: 800 }}>PACK EXPERT</div>
                 <div style={{ color: "#fff", fontWeight: 700, fontSize: "1.1rem" }}>400 Jetons</div>
-                <div style={{ color: "var(--text-muted)", fontSize: "0.85rem" }}>2 060 FCFA</div>
+                <div style={{ color: "var(--text-muted)", fontSize: "0.85rem" }}>2 000 FCFA</div>
               </div>
               <div style={{ padding: "1rem", borderRadius: "12px", background: "rgba(255,255,255,0.04)", textAlign: "center", border: "1px solid rgba(255, 215, 0, 0.2)" }}>
                 <div className="font-orbitron" style={{ color: "var(--cyber-gold)", fontWeight: 800 }}>PACK CHAMPION</div>
                 <div style={{ color: "#fff", fontWeight: 700, fontSize: "1.1rem" }}>500 Jetons</div>
-                <div style={{ color: "var(--text-muted)", fontSize: "0.85rem" }}>2 575 FCFA</div>
+                <div style={{ color: "var(--text-muted)", fontSize: "0.85rem" }}>2 500 FCFA</div>
               </div>
               <div style={{ padding: "1rem", borderRadius: "12px", background: "rgba(255,255,255,0.04)", textAlign: "center", border: "1px solid var(--cyber-gold)" }}>
                 <div className="font-orbitron" style={{ color: "var(--cyber-gold)", fontWeight: 900 }}>PACK ÉLITE</div>
                 <div style={{ color: "#fff", fontWeight: 800, fontSize: "1.1rem" }}>1 000 Jetons</div>
-                <div style={{ color: "var(--text-muted)", fontSize: "0.85rem" }}>5 150 FCFA</div>
+                <div style={{ color: "var(--text-muted)", fontSize: "0.85rem" }}>5 000 FCFA</div>
               </div>
             </div>
           </div>
