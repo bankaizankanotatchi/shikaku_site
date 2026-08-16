@@ -160,10 +160,7 @@ export default function Footer() {
         }}
       >
         <div>
-          © {new Date().getFullYear()} Shikaku Mobile. Tous droits réservés.
-        </div>
-        <div style={{ display: "flex", alignItems: "center", gap: "0.3rem" }}>
-          Fait avec <Heart size={14} color="var(--neon-pink)" fill="var(--neon-pink)" /> pour les passionnés de stratégie.
+          Shikaku. Tous droits réservés.
         </div>
       </div>
     </footer>

@@ -319,7 +319,7 @@ export default function TournamentsPage() {
             border: "1px solid rgba(255, 215, 0, 0.3)",
           }}
         >
-          <div className="feature-card-grid" style={{ display: "grid", gap: "3rem", alignItems: "center" }}>
+          <div style={{ display: "flex", flexDirection: "column", gap: "2.5rem", width: "100%" }}>
             <div>
               <div
                 style={{
@@ -371,8 +371,8 @@ export default function TournamentsPage() {
               </div>
             </div>
 
-            {/* Screenshots Row */}
-            <div className="screenshots-row">
+            {/* Screenshots Row at bottom on the same line */}
+            <div className="screenshots-row" style={{ display: "flex", gap: "2rem", justifyContent: "center", alignItems: "center", flexWrap: "wrap", width: "100%", marginTop: "1rem" }}>
               <SamsungMockup
                 src="/images/screenshots/tournoi_1.jpeg"
                 alt="Écran des Tournois"
