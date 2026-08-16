@@ -6,7 +6,8 @@ import ScrollToTopButton from "../components/ScrollToTopButton";
 import InteractiveGrid from "../components/InteractiveGrid";
 import SamsungMockup from "../components/SamsungMockup";
 import Image from "next/image";
-import { Trophy, Coins, ShieldCheck, Clock, Wallet, CheckCircle2, UserCheck, Calculator, Award } from "lucide-react";
+import Link from "next/link";
+import { Trophy, Coins, ShieldCheck, Clock, Wallet, CheckCircle2, UserCheck, Calculator, Award, BadgeCheck, ChevronRight } from "lucide-react";
 
 export default function TournamentsPage() {
   return (
@@ -220,7 +221,7 @@ export default function TournamentsPage() {
               </div>
 
               <h2 className="font-orbitron" style={{ fontSize: "clamp(1.2rem, 4vw, 1.8rem)", fontWeight: 800, color: "#fff", marginBottom: "1.2rem", wordBreak: "break-word" }}>
-                SEULS LES COMPTES CERTIFIÉS & ADMINS PEUVENT CRÉER DES TOURNOIS
+                SEULS LES COMPTES CERTIFIÉS PEUVENT CRÉER DES TOURNOIS
               </h2>
 
               <p style={{ color: "var(--text-muted)", fontSize: "1.05rem", lineHeight: 1.7, marginBottom: "1.5rem" }}>
@@ -238,6 +239,28 @@ export default function TournamentsPage() {
                   <CheckCircle2 size={18} color="var(--neon-cyan)" /> Réglage des grilles (15x15 à 30x30) et timers (15s à 30s)
                 </li>
               </ul>
+
+              <div style={{ marginTop: "1.8rem" }}>
+                <Link
+                  href="/certification"
+                  className="btn-cyber-primary"
+                  style={{
+                    display: "inline-flex",
+                    alignItems: "center",
+                    gap: "0.6rem",
+                    padding: "0.7rem 1.4rem",
+                    borderRadius: "30px",
+                    textDecoration: "none",
+                    fontWeight: 700,
+                    color: "#dfee10ff",
+                    fontSize: "0.88rem",
+                  }}
+                >
+                  <BadgeCheck size={18} />
+                  GUIDE DE CERTIFICATION (TIMELINE 6 CONDITIONS)
+                  <ChevronRight size={16} />
+                </Link>
+              </div>
             </div>
 
             {/* Prize Pool Formula Box */}
@@ -296,7 +319,7 @@ export default function TournamentsPage() {
             border: "1px solid rgba(255, 215, 0, 0.3)",
           }}
         >
-          <div style={{ display: "grid", gridTemplateColumns: "1fr", gap: "3rem", alignItems: "center" }} className="feature-card-grid">
+          <div className="feature-card-grid" style={{ display: "grid", gap: "3rem", alignItems: "center" }}>
             <div>
               <div
                 style={{

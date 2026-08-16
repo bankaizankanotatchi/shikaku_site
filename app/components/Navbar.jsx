@@ -53,6 +53,7 @@ export default function Navbar() {
       icon: BookOpen,
       items: [
         { href: "/regles", label: "Règles & Grilles", desc: "Formations de carrés 1x1 & timers 15s", icon: BookOpen },
+        { href: "/certification", label: "Certification & Badge Bleu", desc: "Guide, timeline 6 conditions & Express 19 999 FCFA", icon: ShieldCheck },
         { href: "/modes-ia", label: "Modes IA & Bots", desc: "Cyber Apprenti, NEXUS-9 & Omega Prime", icon: Bot },
       ],
     },
@@ -61,7 +62,7 @@ export default function Navbar() {
       label: "Tournois & Cash",
       icon: Trophy,
       items: [
-        { href: "/tournois", label: "Tournois & Cash-Prizes", desc: "Bronze, Argent, Or & Comptes certifiés", icon: Trophy },
+        { href: "/tournois", label: "Tournois & Cash-Prizes", desc: "Bronze, Argent & Or", icon: Trophy },
         { href: "/jetons", label: "Jetons & Retrait", desc: "Jetons éligibles vs classiques & FCFA", icon: Coins },
       ],
     },

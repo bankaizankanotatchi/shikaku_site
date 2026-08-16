@@ -96,6 +96,11 @@ export default function Footer() {
               </Link>
             </li>
             <li>
+              <Link href="/certification" style={{ color: "var(--neon-cyan)", textDecoration: "none", fontWeight: 700 }}>
+                Compte Certifié & Badge Bleu
+              </Link>
+            </li>
+            <li>
               <Link href="/jetons" style={{ color: "inherit", textDecoration: "none" }}>
                 Jetons & Retrait Mobile Money
               </Link>

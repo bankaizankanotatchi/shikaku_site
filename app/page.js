@@ -5,6 +5,7 @@ import HeroSection from "./components/HeroSection";
 import FeaturesSection from "./components/FeaturesSection";
 import MascotSection from "./components/MascotSection";
 import RulesSection from "./components/RulesSection";
+import CertificationCTA from "./components/CertificationCTA";
 import DownloadSection from "./components/DownloadSection";
 import Footer from "./components/Footer";
 import ScrollToTopButton from "./components/ScrollToTopButton";
@@ -23,6 +24,9 @@ export default function Home() {
 
       {/* Gameplay & Features Section */}
       <FeaturesSection />
+
+      {/* Certification CTA Section */}
+      <CertificationCTA />
 
       {/* Official Mascot Section */}
       <MascotSection />

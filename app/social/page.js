@@ -5,7 +5,8 @@ import Footer from "../components/Footer";
 import ScrollToTopButton from "../components/ScrollToTopButton";
 import InteractiveGrid from "../components/InteractiveGrid";
 import SamsungMockup from "../components/SamsungMockup";
-import { Share2, Video, Heart, MessageCircle, Sparkles, Bell, Shield } from "lucide-react";
+import Link from "next/link";
+import { Share2, Video, Heart, MessageCircle, Sparkles, Bell, Shield, BadgeCheck, ChevronRight } from "lucide-react";
 
 export default function SocialPage() {
   return (
@@ -214,6 +215,41 @@ export default function SocialPage() {
               >
                 <MessageCircle size={22} color="var(--neon-cyan)" />
                 <span>Pastille de notification réactive en temps réel dès qu&apos;un nouveau post est publié !</span>
+              </div>
+
+              <div
+                style={{
+                  marginTop: "1.5rem",
+                  padding: "1.2rem",
+                  borderRadius: "16px",
+                  background: "rgba(255, 215, 0, 0.08)",
+                  border: "1px solid var(--cyber-gold)",
+                }}
+              >
+                <div style={{ color: "var(--cyber-gold)", fontWeight: 800, fontSize: "0.95rem", marginBottom: "0.4rem", display: "flex", alignItems: "center", gap: "0.5rem" }}>
+                  <BadgeCheck size={18} />
+                  PUBLICATION RÉSERVÉE AUX COMPTES CERTIFIÉS & ADMINS
+                </div>
+                <p style={{ color: "var(--text-muted)", fontSize: "0.88rem", lineHeight: 1.5, marginBottom: "0.8rem" }}>
+                  Les comptes certifiés (badge bleu) bénéficient du privilège de pouvoir créer des publications texte, photo et vidéo publiquement.
+                </p>
+                <Link
+                  href="/certification"
+                  className="btn-cyber-primary"
+                  style={{
+                    display: "inline-flex",
+                    alignItems: "center",
+                    gap: "0.5rem",
+                    padding: "0.5rem 1.2rem",
+                    borderRadius: "25px",
+                    textDecoration: "none",
+                    fontWeight: 700,
+                    fontSize: "0.82rem",
+                  }}
+                >
+                  COMMENT ÊTRE CERTIFIÉ ? (GUIDE & TIMELINE)
+                  <ChevronRight size={14} />
+                </Link>
               </div>
             </div>
 
