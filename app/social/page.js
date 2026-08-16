@@ -17,17 +17,9 @@ export default function SocialPage() {
       <InteractiveGrid />
       <Navbar />
 
-      <div
-        style={{
-          maxWidth: "1250px",
-          margin: "0 auto",
-          padding: "8rem 1.5rem 6rem 1.5rem",
-          position: "relative",
-          zIndex: 10,
-        }}
-      >
+      <div className="subpage-container" style={{ position: "relative", zIndex: 10 }}>
         {/* Page Title */}
-        <div style={{ textAlign: "center", marginBottom: "4rem" }}>
+        <div className="subpage-header" style={{ textAlign: "center", marginBottom: "2.5rem" }}>
           <div
             style={{
               display: "inline-flex",

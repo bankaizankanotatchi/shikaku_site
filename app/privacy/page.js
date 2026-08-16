@@ -69,13 +69,7 @@ export default function PrivacyPolicy() {
     <main style={{ minHeight: "100vh", background: "var(--bg-deep)", color: "var(--text-main)" }}>
       <Navbar />
 
-      <div
-        style={{
-          maxWidth: "800px",
-          margin: "0 auto",
-          padding: "8rem 1.5rem 6rem 1.5rem",
-        }}
-      >
+      <div className="subpage-container" style={{ maxWidth: "800px" }}>
         <Link
           href="/"
           className="btn-cyber-outline"
